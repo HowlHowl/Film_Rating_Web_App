@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "ui <- fluidPage(\n  \n  titlePanel(\"Avaliação de Filmes\"),\n  \n  sidebarLayout(\n    \n    sidebarPanel(\n      \n      conditionalPanel(condition=\"input.tabselected==1\",\n      radioButtons(\"dist\", \"Selecione uma representação:\",\n                   c(\"Histograma\" = \"norm\",\n                     \"Gráfico de Pontos\" = \"unif\",\n                     \"Gráfico de Linhas\" = \"lnorm\",\n                     \"Box-Plot\" = \"exp\")),\n      br(),\n      \n      sliderInput(\"n\",\n                  \"Número de Avaliações:\",\n                  value = 500,\n                  min = 1,\n                  max = 1000)\n      ),\n      conditionalPanel(condition=\"input.tabselected==2\",\n        textInput(\"nome1\", \"Digite o seu nome\",\"\"),\n        textInput(\"nome2\", \"Digite o seu sobrenome\",\"\"),\n        textInput(\"email\", \"Digite o seu email\",\"\"),\n        textInput(\"idade\", \"Digite a sua idade\",\"\"),\n        textInput(\"cidade\", \"Digite a sua cidade\",\"\"),\n        radioButtons(\"categoria\", \"Selecione a sua categoria\",list(\"Crítico Amador\",\"Crítico Profissional\"),\"\")\n      ),\n      conditionalPanel(condition=\"input.tabselected==3\",\n                       textInput(\"avaliador_id\", \"Digite o seu ID de Crítico\",\"\"),\n                       selectInput(\"filmes\", \"Selecione o nome do filme (também pode ser encontrado na próxima aba)\",c(\"Toy Story\",\"Batman\",\"Iron Man\",\"Titanic\",\"Karate Kid\")),\n                       sliderInput(\"nota\", \"Selecione a sua nota\", min=0,max=100,value=50)\n      )\n    ),\n    \n    mainPanel(\n      \n      tabsetPanel(type = \"tabs\",\n                  tabPanel(\"Consultas\", value=1, plotOutput(\"plot\")),\n                  tabPanel(\"Cadastros\", value=2,\n                           h3(\"Por favor confirme seus dados abaixo\"),\n                           h1(\" \"),\n                           h4(textOutput(\"outnome1\")),\n                           h1(\" \"),\n                           h4(textOutput(\"outnome2\")),\n                           h1(\" \"),\n                           h4(textOutput(\"outemail\")),\n                           h1(\" \"),\n                           h4(textOutput(\"outidade\")),\n                           h1(\" \"),\n                           h4(textOutput(\"outcidade\")),\n                           h1(\" \"),\n                           h4(textOutput(\"outcategoria\"))\n                           ),\n                  tabPanel(\"Avaliações\",value=3,\n                           h3(\"Por favor confirme seus dados abaixo\"),\n                           h1(\" \"),\n                           h4(textOutput(\"outavaliador_id\")),\n                           h4(textOutput(\"outfilmes\")),\n                           h4(textOutput(\"outnota\"))\n                           ),\n                  id = \"tabselected\"\n                  #tabPanel(\"Filmes Disponíveis\", DT::dataTableOutput(outputId = 'filmes'))\n                )\n      )\n      \n    )\n)",
+    "created" : 1529345364536.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3003355625",
+    "id" : "36B14AAA",
+    "lastKnownWriteTime" : 1529357867,
+    "last_content_update" : 1529357867313,
+    "path" : "C:/Users/leonardoss/Desktop/film_rating_app/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

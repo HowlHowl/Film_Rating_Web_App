@@ -1,0 +1,9 @@
+{
+    "path" : "~/R Projects/film_rating_app",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

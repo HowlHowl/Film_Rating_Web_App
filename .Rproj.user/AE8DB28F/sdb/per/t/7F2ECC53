@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "server <- function(input, output) {\n  \n#  con <- dbConnect(RMySQL::MySQL(),\n#                  dbname = \"filmrating\",\n#                   host = \"127.0.0.1\",\n#                   port = 3306,\n#                   user = \"root\",\n#                   password = \"\")\n#  \n#  myquery <- \"select * from critico;\"\n#  a <- dbGetQuery(con, myquery)\n#  \n#  myquery2 <- \"select * from filme;\"\n#  filmesdf <- dbGetQuery(con, myquery2)\n  \n  d <- reactive({\n    dist <- switch(input$dist,\n                   norm = rnorm,\n                   unif = runif,\n                   lnorm = rlnorm,\n                   exp = rexp,\n                   rnorm)\n    \n    dist(input$n)\n  })\n  \n  output$plot <- renderPlot({\n    dist <- input$dist\n    n <- input$n\n    \n    hist(d(),\n         main = paste(\"r\", dist, \"(\", n, \")\", sep = \"\"),\n         col = \"#75AADB\", border = \"white\")\n  })\n  \n  output$summary <- renderPrint({\n    summary(d())\n  })\n  \n  output$table <- renderTable({\n    d()\n  })\n  \n  output$outnome1 <- renderText(paste(\"\\nNome Principal: \",input$nome1))\n  output$outnome2 <- renderText(paste(\"\\nSobrenome: \",input$nome2))\n  output$outemail <- renderText(paste(\"\\nEmail: \",input$email))\n  output$outidade <- renderText(paste(\"\\nIdade: \",input$idade))\n  output$outcidade <- renderText(paste(\"\\nCidade: \",input$cidade))\n  output$outcategoria <- renderText(paste(\"\\nCategoria: \",input$categoria))\n  \n  output$outavaliador_id <- renderText(paste(\"\\nID do Crítico: \",input$avaliador_id))\n  output$outfilmes <- renderText(paste(\"\\nFilme Selecionado: \",input$filmes))\n  output$outnota <- renderText(paste(\"\\nNota: \",input$nota))\n  \n#  output$foo <- DT::renderDataTable({ a })\n#  output$filmes <- DT::renderDataTable({ filmesdf })\n  \n#  dbDisconnect(con)\n}",
+    "created" : 1529345368651.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "382635575",
+    "id" : "7F2ECC53",
+    "lastKnownWriteTime" : 1529357857,
+    "last_content_update" : 1529357857889,
+    "path" : "C:/Users/leonardoss/Desktop/film_rating_app/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

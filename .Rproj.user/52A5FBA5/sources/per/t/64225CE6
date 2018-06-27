@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529208112148.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "862712099",
+    "id" : "64225CE6",
+    "lastKnownWriteTime" : 1530016396,
+    "last_content_update" : 1530016396845,
+    "path" : "~/R Projects/film_rating_app/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "194,5",
+        "scrollLine" : "183",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
